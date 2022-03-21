@@ -1,6 +1,7 @@
-const booksSection = document.querySelector('.books');
+import Awesome from './modules/awesome-class.js';
+import { DateTime } from './modules/luxon.js';
 
-import Awesome from "./modules/awesome-class.js";
+const booksSection = document.querySelector('.books');
 
 const awesome = new Awesome();
 
@@ -52,7 +53,6 @@ for (let k = 0; k < awesome.books.length; k += 1) {
   window.localStorage.setItem(k.toString(), JSON.stringify(awesome.books[k]));
 }
 
-import {DateTime} from "./modules/luxon.js";
 const dt = DateTime.now().toLocaleString(DateTime.DATETIME_MED);
 document.querySelector('.date').innerHTML = dt;
 
